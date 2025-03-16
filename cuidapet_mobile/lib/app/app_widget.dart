@@ -8,7 +8,7 @@ class AppWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Modular.setInitialRoute('/auth');
+    Modular.setInitialRoute('/auth/');
     return ScreenUtilInit(
       designSize: const Size(390, 844),
       builder: (_, __) => MaterialApp.router(
