@@ -1,4 +1,4 @@
-import 'package:cuidapet/core/ui/extension/size_screen_extension.dart';
+import 'package:cuidapet/app/core/ui/extension/size_screen_extension.dart';
 import 'package:flutter/material.dart';
 
 class AuthHomePage extends StatelessWidget {
