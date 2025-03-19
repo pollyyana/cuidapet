@@ -1,5 +1,6 @@
 import 'package:cuidapet/app/core/ui/icons/cuidapet_icons.dart';
 import 'package:cuidapet/app/core/ui/widget/cuidapet_textformfield.dart';
+import 'package:cuidapet/app/core/ui/widget/rounded_button_icon.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
@@ -46,6 +47,28 @@ class _LoginPageState extends State<LoginPage> {
                   child: Text('validar')),
               Icon(Cuidapet.facebook),
               Icon(Cuidapet.google),
+              RoundedButtonIcon(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('CLicou no Facebook'),
+                  ));
+                },
+                icon: Cuidapet.facebook,
+                label: 'Facebook',
+                width: 130,
+                color: Colors.blueAccent,
+              ),
+              RoundedButtonIcon(
+                onTap: () {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('CLicou no Google'),
+                  ));
+                },
+                icon: Cuidapet.google,
+                label: 'Google',
+                width: 130,
+                color: Colors.orange,
+              )
             ],
           ),
         ),
