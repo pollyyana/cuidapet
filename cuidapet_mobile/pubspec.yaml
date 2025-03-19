@@ -20,6 +20,7 @@ dependencies:
   dio: ^5.8.0+1
   flutter_screenutil: ^5.9.3
   build_runner: ^2.4.15
+  fluttericon: ^2.0.0
 
 dev_dependencies:
   flutter_test:
@@ -35,10 +36,10 @@ flutter:
   #   - images/a_dot_ham.jpeg
 
   # example:
-  # fonts:
-  #   - family: Schyler
-  #     fonts:
-  #       - asset: fonts/Schyler-Regular.ttf
+  fonts:
+    - family: Cuidapet
+      fonts:
+        - asset: assets/fonts/Cuidapet.ttf
   #       - asset: fonts/Schyler-Italic.ttf
   #         style: italic
   #   - family: Trajan Pro

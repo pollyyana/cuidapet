@@ -1,9 +1,9 @@
+import 'package:cuidapet/app/core/ui/icons/cuidapet_icons.dart';
 import 'package:cuidapet/app/core/ui/widget/cuidapet_textformfield.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-
-    LoginPage({super.key});
+  LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -30,17 +30,22 @@ class _LoginPageState extends State<LoginPage> {
                 label: 'Login',
                 obscureText: true,
                 controller: testeEC,
-                validator: (String? value){
-                  if(value == null || value.isEmpty ){
+                validator: (String? value) {
+                  if (value == null || value.isEmpty) {
                     return 'valor obrigatorio';
-                  }return null;
+                  }
+                  return null;
                 },
               ),
               Text(testeEC.text),
-              ElevatedButton(onPressed: (){
-                formKey.currentState?.validate();
-                print(testeEC.text);
-              }, child: Text('validar'))
+              ElevatedButton(
+                  onPressed: () {
+                    formKey.currentState?.validate();
+                    print(testeEC.text);
+                  },
+                  child: Text('validar')),
+              Icon(Cuidapet.facebook),
+              Icon(Cuidapet.google),
             ],
           ),
         ),
