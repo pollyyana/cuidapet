@@ -1,10 +1,11 @@
 import 'package:cuidapet/app/core/ui/icons/cuidapet_icons.dart';
 import 'package:cuidapet/app/core/ui/widget/cuidapet_textformfield.dart';
+import 'package:cuidapet/app/core/ui/widget/cd_default_button.dart';
 import 'package:cuidapet/app/core/ui/widget/rounded_button_icon.dart';
 import 'package:flutter/material.dart';
 
 class LoginPage extends StatefulWidget {
-  LoginPage({super.key});
+  const LoginPage({super.key});
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -68,6 +69,16 @@ class _LoginPageState extends State<LoginPage> {
                 label: 'Google',
                 width: 130,
                 color: Colors.orange,
+              ),
+              CdDefaultButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                    content: Text('clicou'),
+                  ));
+                },
+                label: 'Entrar',
+                // width: 200,
+                // height: 50,
               )
             ],
           ),
