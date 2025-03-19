@@ -1,8 +1,13 @@
+import 'package:cuidapet/app/core/ui/extension/size_screen_extension.dart';
+import 'package:cuidapet/app/core/ui/extension/theme_extension.dart';
 import 'package:cuidapet/app/core/ui/icons/cuidapet_icons.dart';
-import 'package:cuidapet/app/core/ui/widget/cuidapet_textformfield.dart';
 import 'package:cuidapet/app/core/ui/widget/cd_default_button.dart';
+import 'package:cuidapet/app/core/ui/widget/cuidapet_textformfield.dart';
 import 'package:cuidapet/app/core/ui/widget/rounded_button_icon.dart';
 import 'package:flutter/material.dart';
+
+part 'widgets/login_form.dart';
+part 'widgets/login_register_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -12,78 +17,71 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final testeEC = TextEditingController();
+  @override
+  Widget build(BuildContext context) {
+    return SingleChildScrollView(
+      child: Padding(
+        padding: const EdgeInsets.all(15),
+        child: Column(
+          children: [
+            SizedBox(
+              height: 50.h,
+            ),
+            Center(
+              child: Image.asset(
+                'assets/images/logo.png',
+                width: 162.w,
+                fit: BoxFit.fill,
+              ),
+            ),
+            SizedBox(
+              height: 20,
+            ),
+            _LoginForm(),
+            const SizedBox(
+              height: 8,
+            ),
+            OrSeparator(),
+            _LoginRegisterButton(),
+          ],
+        ),
+      ),
+    );
+  }
+}
 
-  final formKey = GlobalKey<FormState>();
+class OrSeparator extends StatelessWidget {
+  const OrSeparator({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: const Text('Login Page'),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Form(
-          key: formKey,
-          child: Column(
-            children: [
-              CuidapetTextformfield(
-                label: 'Login',
-                obscureText: true,
-                controller: testeEC,
-                validator: (String? value) {
-                  if (value == null || value.isEmpty) {
-                    return 'valor obrigatorio';
-                  }
-                  return null;
-                },
-              ),
-              Text(testeEC.text),
-              ElevatedButton(
-                  onPressed: () {
-                    formKey.currentState?.validate();
-                    print(testeEC.text);
-                  },
-                  child: Text('validar')),
-              Icon(Cuidapet.facebook),
-              Icon(Cuidapet.google),
-              RoundedButtonIcon(
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('CLicou no Facebook'),
-                  ));
-                },
-                icon: Cuidapet.facebook,
-                label: 'Facebook',
-                width: 130,
-                color: Colors.blueAccent,
-              ),
-              RoundedButtonIcon(
-                onTap: () {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('CLicou no Google'),
-                  ));
-                },
-                icon: Cuidapet.google,
-                label: 'Google',
-                width: 130,
-                color: Colors.orange,
-              ),
-              CdDefaultButton(
-                onPressed: () {
-                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                    content: Text('clicou'),
-                  ));
-                },
-                label: 'Entrar',
-                // width: 200,
-                // height: 50,
-              )
-            ],
+    return Row(
+      children: [
+        Expanded(
+          child: Divider(
+            thickness: 1,
+            color: context.primaryColor,
           ),
         ),
-      ),
+        Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Text(
+            'OU',
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              fontSize: 20.sp,
+              color: context.primaryColor,
+            ),
+          ),
+        ),
+        Expanded(
+          child: Divider(
+            thickness: 1,
+            color: context.primaryColor,
+          ),
+
+        ),
+      ],
     );
   }
 }
