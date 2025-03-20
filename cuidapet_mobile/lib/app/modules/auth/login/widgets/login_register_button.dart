@@ -26,7 +26,9 @@ class _LoginRegisterButton extends StatelessWidget {
           label: 'Google',
         ),
         RoundedButtonIcon(
-          onTap: () {},
+          onTap: () {
+            Navigator.pushNamed(context, '/auth/register');
+          },
           width: .42.sw,
           color: context.primaryColorDark,
           icon: Cuidapet.facebook,
