@@ -1,3 +1,4 @@
+import 'package:cuidapet/app/core/helpers/enviroments.dart';
 import 'package:cuidapet/app/core/ui/extension/size_screen_extension.dart';
 import 'package:cuidapet/app/core/ui/extension/theme_extension.dart';
 import 'package:cuidapet/app/core/ui/icons/cuidapet_icons.dart';
@@ -24,6 +25,7 @@ class _LoginPageState extends State<LoginPage> {
         padding: const EdgeInsets.all(15),
         child: Column(
           children: [
+            Text(Enviroments.param('base_url')?? ''),
             SizedBox(
               height: 50.h,
             ),

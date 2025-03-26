@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "575499287911",
+    "project_id": "cuidapet-c87d2",
+    "storage_bucket": "cuidapet-c87d2.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:575499287911:android:b7e6e148a56bc2765603c2",
+        "android_client_info": {
+          "package_name": "br.com.pontopolly.cuidapet"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDxP8ZBpOcJyEi8iGfV4-KA1yefnPc1Ucw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
