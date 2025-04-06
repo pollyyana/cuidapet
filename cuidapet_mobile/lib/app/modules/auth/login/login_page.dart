@@ -24,10 +24,7 @@ class _LoginPageState extends State<LoginPage> {
     var log = Modular.get<AppLogger>();
     log.append('m1');
     log.append('m2');
-    log.append('m1');
-    log.append('m1');
-    log.append('m1');
-    log.append('m1');
+  
     log.closeAppend();
     return Scaffold(
       body: SingleChildScrollView(

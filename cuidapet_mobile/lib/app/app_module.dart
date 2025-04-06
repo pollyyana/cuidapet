@@ -7,10 +7,10 @@ import 'modules/auth/auth_module.dart';
 class AppModule extends Module {
   //tods os binds que sentar nesse modulo, serao importados para aplicação como um todo, sem causar sujeira
   @override
-   List<Module> get imports => [
-    CoreModule()];
+  List<Module> get imports => [CoreModule()];
+
   // List<Module> get imports => CoreModule().imports;
- 
+
   @override
   void binds(i) {}
 
