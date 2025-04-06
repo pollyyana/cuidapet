@@ -1,3 +1,4 @@
+import 'package:cuidapet/app/core/logger/app_logger.dart';
 import 'package:cuidapet/app/core/ui/extension/size_screen_extension.dart';
 import 'package:cuidapet/app/core/ui/extension/theme_extension.dart';
 import 'package:cuidapet/app/core/ui/icons/cuidapet_icons.dart';
@@ -5,6 +6,7 @@ import 'package:cuidapet/app/core/ui/widget/cd_default_button.dart';
 import 'package:cuidapet/app/core/ui/widget/cuidapet_textformfield.dart';
 import 'package:cuidapet/app/core/ui/widget/rounded_button_icon.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_modular/flutter_modular.dart';
 
 part 'widgets/login_form.dart';
 part 'widgets/login_register_button.dart';
@@ -19,32 +21,42 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      child: Padding(
-        padding: const EdgeInsets.all(15),
-        child: Column(
-          children: [
-            // Text(Enviroments.param('base_url')?? ''), // teste env
-            SizedBox(
-              height: 50.h,
-            ),
-            Center(
-              child: Image.asset(
-                'assets/images/logo.png',
-                width: 162.w,
-                fit: BoxFit.fill,
+    var log = Modular.get<AppLogger>();
+    log.append('m1');
+    log.append('m2');
+    log.append('m1');
+    log.append('m1');
+    log.append('m1');
+    log.append('m1');
+    log.closeAppend();
+    return Scaffold(
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: const EdgeInsets.all(15),
+          child: Column(
+            children: [
+              // Text(Enviroments.param('base_url')?? ''), // teste env
+              SizedBox(
+                height: 50.h,
               ),
-            ),
-            SizedBox(
-              height: 20,
-            ),
-            _LoginForm(),
-            const SizedBox(
-              height: 8,
-            ),
-            OrSeparator(),
-            _LoginRegisterButton(),
-          ],
+              Center(
+                child: Image.asset(
+                  'assets/images/logo.png',
+                  width: 162.w,
+                  fit: BoxFit.fill,
+                ),
+              ),
+              SizedBox(
+                height: 20,
+              ),
+              _LoginForm(),
+              const SizedBox(
+                height: 8,
+              ),
+              OrSeparator(),
+              _LoginRegisterButton(),
+            ],
+          ),
         ),
       ),
     );

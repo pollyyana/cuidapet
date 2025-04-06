@@ -1,10 +1,20 @@
+import 'package:cuidapet/app/core/logger/app_logger.dart';
+import 'package:cuidapet/app/core/logger/app_logger_impl.dart';
+import 'package:cuidapet/app/core/rest_client/dio/dio_rest_client.dart';
+import 'package:cuidapet/app/core/rest_client/rest_client.dart';
+
 import 'package:cuidapet/app/modules/core/auth/auth_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
+
+
 
 class CoreModule extends Module {
   @override
   void binds(i) {
     i.addLazySingleton<AuthStore>(AuthStore.new);
+    i.addLazySingleton<RestClient>(DioRestClient.new);
+    i.addLazySingleton<AppLogger>(AppLoggerImpl.new);
+
  // Registra AuthStore
   }
 }

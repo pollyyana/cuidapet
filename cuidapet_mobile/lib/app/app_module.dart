@@ -5,14 +5,14 @@ import 'package:flutter_modular/flutter_modular.dart';
 import 'modules/auth/auth_module.dart';
 
 class AppModule extends Module {
-  
-  @override
-  void binds(i) {
-    
-  }
-  @override
   //tods os binds que sentar nesse modulo, serao importados para aplicação como um todo, sem causar sujeira
-  List<Module> get imports => CoreModule().imports;
+  @override
+   List<Module> get imports => [
+    CoreModule()];
+  // List<Module> get imports => CoreModule().imports;
+ 
+  @override
+  void binds(i) {}
 
   @override
   void routes(r) {
