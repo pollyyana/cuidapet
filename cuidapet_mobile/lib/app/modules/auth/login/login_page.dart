@@ -1,3 +1,4 @@
+import 'package:cuidapet/app/core/local_storage/local_storage.dart';
 import 'package:cuidapet/app/core/logger/app_logger.dart';
 import 'package:cuidapet/app/core/ui/extension/size_screen_extension.dart';
 import 'package:cuidapet/app/core/ui/extension/theme_extension.dart';
@@ -12,7 +13,12 @@ part 'widgets/login_form.dart';
 part 'widgets/login_register_button.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+  LoginPage({super.key}) {
+    Modular.get<LocalStorage>().write<String>('Teste', 'teste1');
+    Future.delayed(const Duration(seconds: 2), () async{
+      print(await Modular.get<LocalStorage>().read<String>('Teste'));
+    });
+  }
 
   @override
   State<LoginPage> createState() => _LoginPageState();
@@ -24,7 +30,7 @@ class _LoginPageState extends State<LoginPage> {
     var log = Modular.get<AppLogger>();
     log.append('m1');
     log.append('m2');
-  
+
     log.closeAppend();
     return Scaffold(
       body: SingleChildScrollView(
@@ -89,7 +95,6 @@ class OrSeparator extends StatelessWidget {
             thickness: 1,
             color: context.primaryColor,
           ),
-
         ),
       ],
     );
