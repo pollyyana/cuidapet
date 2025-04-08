@@ -24,7 +24,7 @@ class __LoginFormState extends State<_LoginForm> {
         CdDefaultButton(
           label: 'Entrar',
           onPressed: () {
-            Loader.show();
+  
             Future.delayed(Duration(seconds: 2),() => Loader.hide());
           },
         ),

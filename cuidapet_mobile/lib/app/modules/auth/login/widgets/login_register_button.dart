@@ -12,7 +12,9 @@ class _LoginRegisterButton extends StatelessWidget {
       runSpacing: 10, //espaço de cima pra baixo
       children: [
         RoundedButtonIcon(
-          onTap: () {},
+          onTap: () {
+             Messages.info('Erro');
+          },
           width: .42.sw,
           color: Color(0xff4267b3),
           icon: Cuidapet.facebook,

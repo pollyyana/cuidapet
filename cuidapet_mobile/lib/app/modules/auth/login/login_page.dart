@@ -10,6 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 import '../../../core/ui/widget/loader.dart';
+import '../../../core/ui/widget/messages.dart';
 
 part 'widgets/login_form.dart';
 part 'widgets/login_register_button.dart';
