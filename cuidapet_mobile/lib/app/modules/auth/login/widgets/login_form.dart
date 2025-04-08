@@ -23,7 +23,10 @@ class __LoginFormState extends State<_LoginForm> {
         ),
         CdDefaultButton(
           label: 'Entrar',
-          onPressed: () {},
+          onPressed: () {
+            Loader.show();
+            Future.delayed(Duration(seconds: 2),() => Loader.hide());
+          },
         ),
         const SizedBox(
           height: 20,
