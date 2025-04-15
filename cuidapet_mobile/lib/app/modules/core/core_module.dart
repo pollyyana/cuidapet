@@ -10,18 +10,17 @@ import 'package:cuidapet/app/modules/core/auth/auth_store.dart';
 import 'package:flutter_modular/flutter_modular.dart';
 
 
-
 class CoreModule extends Module {
   @override
-  void binds(i) {
+  void exportedBinds(Injector i) {
+    // Chama primeiro se quiser manter
+    super.exportedBinds(i);
+
+    i.addLazySingleton<AppLogger>(AppLoggerImpl.new);
     i.addLazySingleton<AuthStore>(AuthStore.new);
     i.addLazySingleton<RestClient>(DioRestClient.new);
-    i.addLazySingleton<AppLogger>(AppLoggerImpl.new);
     i.addLazySingleton<LocalStorage>(SharedPreferencesLocalStorageImp.new);
     i.addLazySingleton<LocalSecureStorage>(FlutterSecureStorageLocalStorageImpl.new);
-
-
- // Registra AuthStore
   }
 }
 
@@ -39,15 +38,6 @@ Esse método está adicionando o AuthStore como um Singleton.
 Isso significa que haverá apenas uma instância de AuthStore em toda a aplicação.
 Quando for necessário acessar AuthStore, o Modular vai fornecer sempre a mesma instância.
 */
-
-
-
-
-
-
-
-
-
 
 /*
 
