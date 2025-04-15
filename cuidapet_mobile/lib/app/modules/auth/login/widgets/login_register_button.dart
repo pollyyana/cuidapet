@@ -29,7 +29,7 @@ class _LoginRegisterButton extends StatelessWidget {
         ),
         RoundedButtonIcon(
           onTap: () {
-            Navigator.pushNamed(context, '/auth/register');
+            Navigator.pushNamed(context, '/auth/register/');
           },
           width: .42.sw,
           color: context.primaryColorDark,
