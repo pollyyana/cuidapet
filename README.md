@@ -1,6 +1,6 @@
 # 🐾 CuidaPet
 
-Aplicativo mobile para gerenciamento de serviços pet, como agendamento de banho, tosa, consultas e muito mais! Feito com ❤️ usando Flutter.
+Aplicativo mobile para gerenciamento de serviços pet, como agendamento de banho, tosa, consultas e muito mais! Feito Flutter.
 
 ---
 
