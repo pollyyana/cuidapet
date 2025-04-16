@@ -1,13 +1,21 @@
 // T = e o tipo
-class RestClientResponse<T> {
-  T? data;
+import 'package:cuidapet/app/core/rest_client/rest_client_response.dart';
+
+class RestClientException implements Exception {
+   
+  String? message;
   int? statusCode;
-  String? statusMessage;
-  
-  RestClientResponse({
-    this.data,
+  dynamic error;
+  RestClientResponse response;
+
+  RestClientException({
+    this.message,
     this.statusCode,
-    this.statusMessage,
+    required this.error,
+    required this.response,
   });
 
-}
+  @override
+  String toString() {
+    return 'RestClientException (message: $message, statusCode: $statusCode, error: $error, response: $response)';
+  }}
